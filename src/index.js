@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3000"
-
+console.log(PlayerComponent)
 /***** DOM Elements *****/
 const playerContainer = document.querySelector(".player-container")
 const newPlayerForm = document.querySelector("#new-player-form")
@@ -84,10 +84,10 @@ const initialize = () => {
     .then(r => r.json())
     .then(players => {
       players.forEach(playerObj => {
-        // const playerComponent = new PlayerComponent(playerObj)
+        const playerComponent = new PlayerComponent(playerObj)
         // console.log(playerComponent)
-        // playerComponent.render(playerContainer)
-        renderPlayer(playerObj)
+        playerComponent.render(playerContainer)
+        // renderPlayer(playerObj)
       })
     })
 }
